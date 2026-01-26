@@ -2,9 +2,11 @@ package com.nomelestar.mimido.dish.model;
 
 import com.nomelestar.mimido.chef.model.Chef;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name="dishes")
+@Data
 public class Dish {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
