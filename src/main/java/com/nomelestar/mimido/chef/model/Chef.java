@@ -20,7 +20,7 @@ public class Chef {
     @Column(nullable=false)
     private String description;
     @Column(nullable=false, length = 80)
-    private String speciality;
+    private String specialty;
 
     @OneToMany(mappedBy = "chef", cascade = CascadeType.ALL)
     private List<Dish> dishes;
