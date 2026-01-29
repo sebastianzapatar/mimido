@@ -6,14 +6,22 @@ import com.nomelestar.mimido.chef.dto.ChefUpdateDTO;
 import com.nomelestar.mimido.chef.model.Chef;
 import com.nomelestar.mimido.dish.model.Dish;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChefMapper {
     private ChefMapper() {}
     public static ChefResponseDTO toChefResponseDTO(Chef chef) {
-        List<Long> dishesIds = chef.getDishes()
-                .stream()
-                .map(Dish::getId).toList();
+        List<Long> dishesIds;
+        if(chef.getDishes() == null) {
+            dishesIds= new ArrayList<>();
+        }
+        else{
+            dishesIds = chef.getDishes()
+                    .stream()
+                    .map(Dish::getId).toList();
+        }
+
         return new ChefResponseDTO(
                 chef.getId(),
                 chef.getSpecialty(),
