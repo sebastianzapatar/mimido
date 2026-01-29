@@ -1,8 +1,6 @@
 package com.nomelestar.mimido.chef.controller;
 
 import com.nomelestar.mimido.chef.dto.ChefResponseDTO;
-import com.nomelestar.mimido.chef.model.Chef;
-import com.nomelestar.mimido.chef.repository.ChefRepository;
 import com.nomelestar.mimido.chef.service.ChefService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
