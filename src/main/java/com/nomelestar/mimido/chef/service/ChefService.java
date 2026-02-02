@@ -46,4 +46,8 @@ public class ChefService {
         return ChefMapper.toChefResponseDTO(saved);
 
     }
+    public Chef getEntity(Long id) {
+        return chefRepository.findById(id)
+                .orElseThrow(()->new NotFound("Not found"));
+    }
 }
